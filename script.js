@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
     // 1. TYPED.JS
     const typedEl = document.querySelector("#typed");
@@ -41,12 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         el.classList.add('reveal');
         observer.observe(el);
     });
-
-    // 4. SWIPER
-    if (document.querySelector(".card-wrapper")) {
-        new Swiper(".card-wrapper", { /* ... your config ... */ });
-    }
-
     // 5. FORM LOGIC (Keep separate, it's fine)
     initFormValidation();
 });
@@ -57,3 +53,32 @@ function initFormValidation() {
     
     // Move your form event listeners here...
 }
+
+
+
+const swiper = new Swiper(".card-wrapper", {
+  loop: true,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
