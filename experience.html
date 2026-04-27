@@ -13,6 +13,20 @@
       rel="stylesheet"
     />
 
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+
     <!-- BOOTSTRAP -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -28,11 +42,11 @@
     />
 
     <!-- STYLESHEETS -->
-    <link href="src/output.css" rel="stylesheet" />
+    <!-- <link href="src/output.css" rel="stylesheet" /> -->
     <link href="style.css" rel="stylesheet" />
   </head>
 
-  <body class="gradient">
+  <body style="background-color: var(--offwhite);" class="bg-decoration">
     <!-- NAVBAR -->
 
     <header>
@@ -69,17 +83,29 @@
     </header>
 
     <!-- EXPERIENCE SECTION -->
-    <div class="container" id="experience-page">
-      <div class="container-fluid d-flex justify-content-center mt-3">
-        <h1 class="exp-header">My Experience</h1>
+    <!-- <div class="container" id="experience-page">
+      <div class="floating-flowers-container">
+  <div class="flower flower-1">🌸</div>
+  <div class="flower flower-2">🌺</div>
+  <div class="flower flower-3">🌻</div>
+  <div class="flower flower-4">🌸</div>
+  <div class="flower flower-5">🌺</div>
+</div> -->
+      <div class="container-fluid d-flex justify-content-center mt-5">
+        <h1 class="carter-one-regular" style="margin-top: 5%">My Experience</h1>
       </div>
       <div class="timeline">
         <div class="timeline-container left-container">
-          <img src="images/burgandy-circle.png" alt="White Circle" />
+          <img src="images/burgandy-circle.png" alt="White Circle" class="bullet"/>
           <div class="text-box">
-            <h2 class="experience-text">Accenture</h2>
-            <small class="experience-text">June 2023 - August 2023</small>
-            <p class="experience-text">
+            <h2 class="experience-text">Accenture: Business Analyst</h2>
+            <h6 class="love-ya-like-a-sister-regular">June 2023 - August 2023</h6>
+               <figure class="experience-figure">
+                  <img src="images/accenture.png" class="experience-img" alt="Accenture">
+                  <figcaption class="image-caption experience-text crete-round-regular-italic">Networking Event at Ohana Floor, Salesforce</figcaption>
+              </figure>
+
+            <!-- <p class="experience-text">
               I completed a 6-week in-person personal and professional
               development curriculum focused on introducing professional
               culture, global business topics, and developing skills including
@@ -89,52 +115,82 @@
               process of adding a new feature to an existing mobile application
               that leverages AR and VR technology to promote DEI and customer
               engagement.
-            </p>
+            </p> -->
             <span class="left-container-arrow"></span>
+
+            <div class="d-flex justify-content-between mt-3">
+              <a href="https://canva.link/cnpiycwrp472kvx" target="_blank">
+              <button type="button"
+                class="experience-btn crete-round-regular h-7 text-xs text-beige cursor-pointer border-0 focus:outline-none px-4">Final Presentation
+              </button>
+              </a>
+               <a href="https://www.figma.com/design/0oEG4OWcrPT36kvbk5d273/DisneyVerse?node-id=0-1&t=0jdMFBEhbl6KVfcl-1" target="_blank">
+              <button type="button"         
+                class="experience-btn crete-round-regular h-7 text-xs text-beige cursor-pointer border-0 focus:outline-none px-4">Prototypes</button>
+                </a>
+          </div>
           </div>
         </div>
 
         <div class="timeline-container right-container">
-          <img src="images/burgandy-circle.png" alt="Burgandy Circle" />
+          <img src="images/burgandy-circle.png" alt="Burgandy Circle" class="bullet"/>
           <div class="text-box">
-            <h2 class="experience-text">Dev/Mission</h2>
-            <small class="experience-text"
-              >Semptember 2024 - December 2024
-            </small>
-            <p class="experience-text">
+            <h2 class="experience-text">Dev/Mission: Pre-Apprentice</h2>
+            <h6 class="love-ya-like-a-sister-regular">
+              Semptember 2024 - December 2024
+            </h6>
+            <figure class="experience-figure">
+                  <img src="images/devmission-pic.jpg" class="experience-img" alt="Dev/Mission">
+                  <figcaption class="image-caption experience-text crete-round-regular-italic">Coding Away!</figcaption>
+              </figure>
+            <!-- <p class="experience-text">
               I completed a 12-week program focused on supporting young adults
               to pursue tech careers by providing hardware, programming, and
               critical career skills. There, I cultivated teamwork, professional
               communication, and critical thinking through numerous hands-on
               projects covering topics ranging from IoT, web
               development, and IT essentials.
-            </p>
+            </p> -->
             <span class="right-container-arrow"></span>
+            <div class="d-flex justify-content-between mt-3">
+              <!-- <button type="button"
+                class="experience-btn crete-round-regular h-7 text-xs text-beige cursor-pointer border-0 focus:outline-none px-4">Web App</button>
+              <button type="button"         
+                class="experience-btn crete-round-regular h-7 text-xs text-beige cursor-pointer border-0 focus:outline-none px-4">Class Directory</button> -->
+          </div>
           </div>
         </div>
 
         <div class="timeline-container left-container">
-          <img src="images/burgandy-circle.png" alt="White Circle" />
+          <img src="images/burgandy-circle.png" alt="White Circle" class="bullet"/>
           <div class="text-box">
-            <h2 class="experience-text">MLT</h2>
-            <small class="experience-text">January 2025 - Present</small>
-            <p class="experience-text">
+            <h2 class="experience-text">MLT: Career Preperation Fellow</h2>
+            <h6 class="love-ya-like-a-sister-regular">January 2025 - Present</h6>
+             <figure class="experience-figure">
+                  <img src="images/mlt-pic.png" class="experience-img" alt="MLT">
+                  <figcaption class="image-caption experience-text crete-round-regular-italic">Consulting with Deloitte!</figcaption>
+              </figure>
+            <!-- <p class="experience-text">
               Accepted into a selective 18-month professional development
               program for high-achieving diverse talent Complete business case
               studies and assignments to grow leadership and technical skills
               Attend conferences hosted by industry leaders, such as Deloitte,
               LinkedIn, and Target
-            </p>
+            </p> -->
             <span class="left-container-arrow"></span>
           </div>
         </div>
 
         <div class="timeline-container right-container">
-          <img src="images/burgandy-circle.png" alt="White Circle" />
+          <img src="images/burgandy-circle.png" alt="White Circle" class="bullet"/>
           <div class="text-box">
-            <h2 class="experience-text">LATA</h2>
-            <small class="experience-text">January 2025 - Present</small>
-            <p class="experience-text">
+            <h2 class="experience-text">Latin American Teachers Association: Webmaster Intern</h2>
+            <h6 class="love-ya-like-a-sister-regular">January 2025 - Present</h6>
+             <figure class="experience-figure">
+                  <img src="images/lata-pic.png" class="experience-img" alt="LATA">
+                  <figcaption class="image-caption experience-text crete-round-regular-italic">Community-based technical opportunity</figcaption>
+              </figure>
+            <!-- <p class="experience-text">
               As a WebMaster, I manage the website to ensure the content is
               up-to-date with the latest information about the organization and
               its programs, events, and resources for students and teachers who
@@ -146,17 +202,52 @@
               metadata and content, leading to increased visibility and student 
               outreach, applying the iterative design technique to improve UI/UX, 
               ensuring a responsive and accessible web interface
-            </p>
+            </p> -->
             <span class="right-container-arrow"></span>
+            <div class="d-flex justify-content-between mt-3">
+              <!-- <button type="button"
+                class="experience-btn crete-round-regular h-7 text-xs text-beige cursor-pointer border-0 focus:outline-none px-4">LATA Website</button> -->
+          </div>
           </div>
         </div>
+
+         <div class="timeline-container left-container">
+          <img src="images/burgandy-circle.png" alt="White Circle" class="bullet"/>
+          <div class="text-box">
+            <h2 class="experience-text">Dev/Mission: Marketing Intern</h2>
+             <h6 class="love-ya-like-a-sister-regular">
+              January 2026 - April 2026
+            </h6>
+             <figure class="experience-figure">
+                  <img src="images/marketing-intern-pic.png" class="experience-img" alt="Marketing Intenships">
+                  <figcaption class="image-caption experience-text crete-round-regular-italic">Promoting Dev/Mission!!</figcaption>
+              </figure>
+            <!-- <p class="experience-text">
+              Accepted into a selective 18-month professional development
+              program for high-achieving diverse talent Complete business case
+              studies and assignments to grow leadership and technical skills
+              Attend conferences hosted by industry leaders, such as Deloitte,
+              LinkedIn, and Target
+            </p> -->
+            <span class="left-container-arrow"></span>
+            <div class="d-flex justify-content-between mt-3">
+              <a href="marketing.html" target="_blank">
+              <button type="button"
+                class="experience-btn crete-round-regular h-7 text-xs text-beige cursor-pointer border-0 focus:outline-none px-4">Strategy and Outcomes
+              </button>
+              </a>
+          </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
 
     <!-- PROJECTS SECTION -->
     <div class="section" id="projects-section">
       <div class="container-fluid d-flex justify-content-center mt-5">
-        <h1 class="projects-header">My Projects</h1>
+        <h1 class="projects-header carter-one-regular">Technical Projects</h1>
       </div>
       <div class="justify-content-center container swiper">
         <div class="card-wrapper">
@@ -345,11 +436,10 @@
         </div>
       </div>
     </div>
-
     <!-- CONTACT SECTION -->
-    <div class="container" id="contact-section">
+    <div class="container" id="contact-section"  style="margin-bottom: 10%">
       <div class="container-fluid d-flex justify-content-center">
-        <h1 class="contact-header">Contact Me</h1>
+        <h1 class="contact-header carter-one-regular">Contact Me</h1>
       </div>
 
       <section class="contact d-flex justify-content-center">
@@ -424,7 +514,7 @@
               Message can't be blank
             </div>
           </div>
-          <button type="submit" class="crete-round-regular">
+          <button type="submit" class="crete-round-regular" style="margin-bottom: 10%">
             Send Message
           </button>
         </form>

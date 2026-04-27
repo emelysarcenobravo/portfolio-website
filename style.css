@@ -3,8 +3,374 @@ html {
   scroll-behavior: smooth;
 }
 
+.carter-one-regular {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+details[open] .row {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* Initial state: hidden and slightly shifted down */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* State when active (triggered by JS) */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.love-ya-like-a-sister-regular {
+  font-family: "Love Ya Like A Sister", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.timeline-wrapper {
+  position: relative;
+}
+
+/* Editorial Story Card Styling */
+.story-card {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.story-card.active {
+  border: 2px solid #5c1e1e;
+  background-color: #fdfafa;
+}
+
+.badge-label {
+  font-family: 'Crete Round', serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.news-img{
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 5%;
+}
+
+.story-card h3 {
+  font-family: 'Carter One', cursive;
+  color: #5c1e1e;
+  margin: 10px 0;
+}
+
+.text-burgundy {
+  color: #5c1e1e;
+  font-family: 'Carter One', cursive;
+}
+
+/* Remove dashboard-like grid lines and boxes */
+.section-card {
+  background: transparent !important;
+  /* border: none !important; */
+  padding: 0 !important;
+  border-radius: 16px;
+}
+
+/* Example of a subtle background decoration */
+.bg-decoration {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#abaaaa 1px, transparent 1px);
+  background-size: 50px 50px; /* Creates a clean grid look */
+}
+
+/* Container for the flowers, relative to #experience-page */
+#experience-page {
+  position: relative; /* CRITICAL: Allows absolute positioning within */
+  overflow: visible;  /* Ensures flowers can slightly float 'outside' */
+}
+
+.floating-flowers-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows user to click timeline buttons through flowers */
+  z-index: 1; /* Places them just above background, but below content */
+}
+
+.flower {
+  position: absolute;
+  font-size: 2rem;
+  /* Apply the new spin animation */
+  animation: rotateInPlace 15s linear infinite;
+  /* Ensures it spins around its center */
+  transform-origin: center;
+}
+
+@keyframes rotateInPlace {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The coordinates stay exactly where you placed them (e.g., top: 15%, left: 5%),
+  but they will no longer drift up or down. 
+*/
+.flower-1 { top: 15%; left: 5%; }
+.flower-2 { top: 35%; right: 10%; }
+.flower-3 { top: 55%; left: 15%; }
+.flower-4 { top: 75%; right: 15%; }
+.flower-5 { top: 90%; left: 10%; }
+
+
+.unkempt-regular {
+  font-family: "Unkempt", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.unkempt-bold {
+  font-family: "Unkempt", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+:root {
+  --burgundy: #5c1e1e;
+  --pink: #883333;
+  --offwhite: #e5dcce;
+  /* --offwhite: #FAF9F6; */
+  --dark-offwhite: #dcd0c0;
+}
+
+.stat-card {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover { transform: translateY(-5px); }
+
+.bar-container { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+
+.bar-before, .bar-after {
+  padding: 8px;
+  color: var(--burgundy);
+  border-radius: 4px;
+  font-weight: bold;
+  transition: width 1s ease-in-out;
+}
+
+#bar-before{
+   color: var(--burgundy);
+}
+
+
+#bar-after {
+   color: var(--offwhite);
+}
+
+
+.bar-before { background-color: #ced4da; } /* Gray for old data */
+.bar-after { background-color: #800020; }  /* Burgundy for new data */
+
+/* 
 body {
   height: 100%;
+} */
+
+body {
+  font-family: 'Crete Round', serif;
+  background: linear-gradient(to bottom, #f8f5f2, #ffffff);
+}
+
+/* Section subtitles */
+.section-subtitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--burgundy);
+}
+
+/* Grid for stats */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Stat cards */
+.stat-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h2 {
+  margin: 5px 0 0;
+  color: #800020;
+  font-size: 1.8rem;
+}
+
+.stat-card p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Highlight cards */
+.stat-card.highlight {
+  background: #fff5f7;
+}
+
+/* Before vs After */
+.compare-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.compare-item {
+  text-align: center;
+}
+
+.compare-item h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.before {
+  color: #999;
+}
+
+.after {
+  color: #800020;
+}
+
+/* Arrow */
+.arrow {
+  font-size: 1.5rem;
+  color: #800020;
+}
+
+/* Sections */
+.section {
+  padding: 80px 20px;
+}
+
+.section-card {
+  /* background: white; */
+  padding: 20px;
+  margin: 40px 0;
+  border-radius: 12px;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.05); */
+}
+
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.card-box {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.card-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Bullets */
+.star-bullet {
+  list-style: none;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.star-bullet::before {
+  content: "✿";
+  position: absolute;
+  left: 0;
+  color: #800020;
+}
+
+.stat-bullet {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.stat-bullet::before {
+  content: "• ";
+  color: #555;
+}
+
+/* Images */
+.highlight-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.highlight-img:hover {
+  transform: scale(1.03);
+}
+
+/* Buttons */
+.experience-btn {
+  background: #800020;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.experience-btn:hover {
+  background: #5a0016;
 }
 
 .gradient {
@@ -14,11 +380,16 @@ body {
   background-repeat: no-repeat;
 }
 
+.vl {
+  border-left: 1px solid #5c1e1e;
+  height: 600px;
+}
+
 h1,
 h2,
 h3,
 h4,
-h5,
+h5, h6,
 p,
 small {
   color: #5c1e1e;
@@ -46,27 +417,44 @@ h5 {
 
 /* NAVBAR */
 .nav {
-  background-color: #5c1e1e;
   width: 100vw;
 }
 
 .navbar {
   position: fixed;
-  top: 10px;
+  top: 0px;
   width: 100%;
   z-index: 100;
+  padding: 0px;
+}
+
+/* Make the navigation bar flush to the screen edges */
+.navbar .container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #5c1e1e;
+  border-radius: 0; /* Remove rounded corners to make it flush */
+  display: flex;
+  justify-content: center;
 }
 
 .navbar a {
-  color: #e5dcce;
+  /* color: #e5dcce; */
+  color: #FAF9F6;
+}
+.navbar .nav{
+  background-color: #5c1e1e;
+  border-radius: 5px;
 }
 
 a:visited {
-  color: #e5dcce !important;
+  /* color: #e5dcce !important; */
+  color: #FAF9F6 !important;
 }
 
 .navbar a:hover {
-  box-shadow: 0 20px 30px -6px rgba(92, 30, 30, 0.5);
+  box-shadow: 0 20px 30px -10px rgba(92, 30, 30, 0.5);
 }
 
 /* MY PICTURE */
@@ -79,7 +467,7 @@ svg.clippy {
 }
 
 .cover-pic-div {
-  margin-top: 3%;
+  margin-top: 5%;
   margin-bottom: 3%;
 }
 
@@ -88,10 +476,27 @@ svg.clippy {
   width: 100%;
   margin-top: 10%;
 }
+/* 
 .my-picture {
   height: auto;
   clip-path: url(#clip-ellipse);
   transform: translateY(100px);
+  animation: slideUp 0.8s ease forwards 0s;
+} */
+
+#typed {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.my-picture{
+  clip-path: xywh(0 5px 100% 75% round 15% 0);
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  /* height: auto; */
+  transform: translateY(100px);
+    /* border: 2px black solid; */
   animation: slideUp 0.8s ease forwards 0s;
 }
 
@@ -101,6 +506,24 @@ svg.clippy {
   margin-bottom: 3%;
   padding: 3%;
   overflow: hidden;
+}
+
+ul{
+  list-style: none;
+}
+
+ul li{
+  position: relative;
+  padding-left: 2rem;
+  color: #5c1e1e;
+}
+
+.star-bullet::before{
+  /* content: "★"; */
+  content: "✿";
+  position: absolute;
+  left: 0;
+  color: #5c1e1e;
 }
 
 .resume-button {
@@ -118,6 +541,7 @@ svg.clippy {
 .linkedin-btn,
 .github-btn {
   background-color: #5c1e1e;
+  justify-content: right;
 }
 
 .linkedin-btn:hover,
@@ -143,18 +567,34 @@ svg.clippy {
 
 /* EXPERIENCE BUTTON */
 #experience-btn {
-  background-color: #e5dcce;
-  background-image: linear-gradient(135deg, #9a5151 0%, #5c1e1e 100%);
+  /* background-color: #e5dcce;
+  background-image: linear-gradient(135deg, #9a5151 0%, #5c1e1e 100%); */
   transition: all 0.3s ease-in-out;
   animation: slideUp 0.8s ease forwards 0s;
   transition: transform 0.8s ease-in-ouT !important;
-  box-shadow: 0 0 10px #5c1e1e;
+  border-radius: 5px;
+  /* color: #e5dcce; */
+  background-color: #5c1e1e;
+  color: #FAF9F6;
 }
 
-#experience-btn:hover {
-  background-color: #5c1e1e;
-  box-shadow: none;
+#experience-btn:hover{
+  box-shadow: 0 20px 30px -10px rgba(92, 30, 30, 0.5);
 }
+
+.experience-btn {
+  background-color: #5c1e1e;
+  border: none;
+  border-radius: 5px;
+  /* color: #e5dcce; */
+  color: #FAF9F6;
+}
+
+
+.experience-btn:hover{
+  box-shadow: 0 20px 30px -10px rgba(92, 30, 30, 0.5);
+}
+
 
 /* EXPERIENCE SECTION */
 .section {
@@ -162,8 +602,9 @@ svg.clippy {
   width: 100vw;
 }
 
-.exp-header {
-  color: #e5dcce;
+.exp-header, .linked-btn-text {
+  /* color: #e5dcce; */
+  color: #FAF9F6;
 }
 
 #experience {
@@ -178,6 +619,10 @@ svg.clippy {
   margin-top: 10%;
 }
 
+#marketing-page {
+  margin-top: 10%;
+}
+
 .experience-text {
   color: #5c1e1e;
 }
@@ -188,13 +633,27 @@ svg.clippy {
   margin: 80px auto;
 }
 
-.timeline-container {
+.timeline-container{
   padding: 10px 50px;
   position: relative;
   width: 50%;
   animation: movedown 1s linear forwards;
   opacity: 0;
 }
+
+
+/* 2. Add this for your regular image */
+.experience-img {
+    position: static;    /* This "un-sticks" it from the corner */
+    width: 100%;         /* Makes it span the width of the text box */
+    max-width: 500px;    /* Prevents it from getting too huge on big screens */
+    height: auto;        /* Keeps the aspect ratio perfect */
+    display: block;      /* Ensures it sits on its own line */
+    margin: 15px 0;      /* Adds space above and below the image */
+    border-radius: 10px; /* Optional: gives it nice rounded corners */
+}
+
+
 
 .timeline-container:nth-child(1) {
   animation-delay: 0s;
@@ -214,13 +673,16 @@ svg.clippy {
 
 .text-box {
   padding: 20px 30px;
-  background: #e5dcce;
-  opacity: 0.8;
-  border-color: #5c1e1e;
+  /* background: #e5dcce; */
+  color: #FAF9F6;
+  background-color: var(--dark-offwhite);
   border-width: 5px;
   position: relative;
   border-radius: 6px;
   font-size: 15px;
+  border: solid #5c1e1e 3px;
+
+
 }
 
 .text-box small {
@@ -260,7 +722,7 @@ svg.clippy {
   left: 50%;
 }
 
-.timeline-container img {
+.timeline-container img.bullet{
   position: absolute;
   width: 40px;
   border-radius: 50%;
@@ -381,14 +843,18 @@ img {
   font-weight: 600;
 }
 
+.card-button{
+  background-color: transparent;
+  border: none;
+}
+
 .card-list .card-link .card-button svg {
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   color: #5c1e1e;
   border-radius: 50%;
   margin: 30px 0 5px;
   padding: 3px;
-  background: none;
   cursor: pointer;
   transform: rotate(-45deg);
   border: 2px solid #5c1e1e;
@@ -501,7 +967,8 @@ form button {
   border: 3px;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #5c1e1e;
+  /* box-shadow: 0 0 10px #5c1e1e; */
+  box-shadow: 0 20px 30px -10px rgba(92, 30, 30, 0.5);
   font-size: 16px;
   color: #e5dcce;
   letter-spacing: 1px;

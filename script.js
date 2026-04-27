@@ -1,129 +1,59 @@
-const swiper = new Swiper(".card-wrapper", {
-  loop: true,
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    dynamicBullets: true,
-  },
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
-
-const form = document.querySelector("form");
-const firstName = document.getElementById("first-name");
-const lastName = document.getElementById("last-name");
-const email = document.getElementById("email");
-const subject = document.getElementById("subject");
-const message = document.getElementById("message");
-
-function sendEmail() {
-  const bodyMessage = `First Name: ${firstName.value}<br> Last Name: ${lastName.value}<br> Email: ${email.value} <br> Subject: ${subject.value} <br> Message: ${message.value} <br>`;
-
-  emailjs
-    .send("service_nivjpif", "template_jndpheg", {
-      name: firstName.value + " " + lastName.value,
-      email: email.value,
-      subject: subject.value,
-      message: message.value,
-    })
-    .then((response) => {
-      if(response.status === 200){
-        Swal.fire({title: "Success", 
-                   text: "Email sent successfully!", 
-                   icon: "success",
-                  });
-      } else{
-        Swal.fire({title: "Error", 
-                   text: `Email failed with status: ${response.status}`, 
-                   icon: "error",
-                  });
-      }
-  })
-  .catch((error) => {
-    Swal.fire({title: "Error", 
-               text: `Something went wrong: ${error.text || error}`, 
-               icon: "error",
-              });
-  });
-}
-
-function checkInputs() {
-  const items = document.querySelectorAll(".item");
-  for (const item of items) {
-    if (item.value == "") {
-      item.classList.add("error");
-      item.parentElement.classList.add("error");
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. TYPED.JS
+    const typedEl = document.querySelector("#typed");
+    if (typedEl && typeof Typed !== "undefined") {
+        new Typed("#typed", {
+            strings: [" Emely", "a Developer", "a UX Designer", "a Marketer", "a Problem Solver"],
+            typeSpeed: 70, backSpeed: 40, backDelay: 1200, loop: true
+        });
     }
 
-    if (email.value != "") {
-      checkEmail();
-    }
+    // 2. COUNTER ANIMATION
+    const animateCounter = (counter) => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const count = parseFloat(counter.innerText);
+        const increment = target / 50;
 
-    email.addEventListener("keyup", () => {
-      checkEmail();
+        if (count < target) {
+            counter.innerText = (count + increment).toFixed(1);
+            setTimeout(() => animateCounter(counter), 40);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    // 3. OBSERVERS (Combined)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add reveal class
+                entry.target.classList.add('active');
+                
+                // Trigger counters if they exist in this element
+                entry.target.querySelectorAll('.counter').forEach(animateCounter);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.story-card, .card-box, .section-card, .experience-figure').forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
     });
 
-    item.addEventListener("keyup", () => {
-      if (item.value != "") {
-        item.classList.remove("error");
-        item.parentElement.classList.remove("error");
-      } else {
-        item.classList.add("error");
-        item.parentElement.classList.add("error");
-      }
-    });
-  }
-}
-
-function checkEmail() {
-  const emailRegex =
-    /^([a-z\d\.-]+)@([a-z\d\-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
-  const errorTextEmail = document.querySelector(".error-txt.email");
-  if (!email.value.match(emailRegex)) {
-    email.classList.add("error");
-    email.parentElement.classList.add("error");
-
-    if (email.value != "") {
-      errorTextEmail.innerText = "Enter a valid email address";
-    } else {
-      errorTextEmail.innerText = "Email Address can't be blank";
+    // 4. SWIPER
+    if (document.querySelector(".card-wrapper")) {
+        new Swiper(".card-wrapper", { /* ... your config ... */ });
     }
-  } else {
-    email.classList.remove("error");
-    email.parentElement.classList.remove("error");
-  }
-}
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkInputs();
-
-  if (
-    !firstName.classList.contains("error") &&
-    !lastName.classList.contains("error") &&
-    !subject.classList.contains("error") &&
-    !email.classList.contains("error") &&
-    !message.classList.contains("error")
-  ) {
-    console.log("Email sent successfully!");
-    sendEmail();
-    form.reset();
-    return false;
-  }
+    // 5. FORM LOGIC (Keep separate, it's fine)
+    initFormValidation();
 });
+
+function initFormValidation() {
+    const form = document.querySelector("form");
+    if (!form) return;
+    
+    // Move your form event listeners here...
+}

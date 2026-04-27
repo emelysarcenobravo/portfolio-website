@@ -12,6 +12,11 @@
       rel="stylesheet"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+
+
     <!-- BOOTSRAP -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -21,12 +26,13 @@
     />
 
     <!-- STYLESHEETS -->
-    <link href="src/output.css" rel="stylesheet" />
+    <!-- <link href="src/output.css" rel="stylesheet" /> -->
     <link href="style.css" rel="stylesheet" />
   </head>
 
+
   <!-- NAVBAR -->
-  <body class="gradient">
+  <body style="background-color: var(--offwhite);" class="bg-decoration">
     <header>
       <nav class="navbar navbar-placeholder">
         <div class="container-fluid d-flex justify-content-center">
@@ -56,7 +62,7 @@
 
     <div>
       <!-- SVG OF ELLIPSE -->
-      <svg class="clippy">
+      <!-- <svg class="clippy">
         <defs>
           <clipPath id="clip-ellipse" clipPathUnits="objectBoundingBox">
             <path
@@ -65,14 +71,14 @@
             />
           </clipPath>
         </defs>
-      </svg>
+      </svg> -->
 
       <!-- CONTAINER WITH MY PICTURE AND BIO -->
       <div class="container home-container">
         <div class="row">
           <div class="cover-pic-div col-md-6 col-xs-12">
             <img
-              src="images/picture-of-me.png"
+              src="images/pic-of-me.jpg"
               class="img-fluid my-picture"
               alt="Picture of Me"
             />
@@ -80,25 +86,21 @@
 
           <div class="my-bio-div col-md-6 col-xs-12">
             <h1
-              class="home-text crete-round-regular container-fluid d-flex justify-content-center"
+              class="home-text text-center mb-5 carter-one-regular"
             >
-              Hello, I'm Emely
+              Hello, I'm&nbsp;<span id="typed"></span>
             </h1>
             <h5 class="crete-round-regular home-text">
-              I am a Webmaster for a non-profit organization called LATA (Latin American
-              Teacher Association of San Francisco), ensuring the information
-              and resources on the website are up-to-date for underserved, firt-generation
-              Latinx high school seniors. I am an aspiring Software
-              Engineer and wish to continue helping others through web
-              development! I attend San Francisco State University as a Computer
-              Science major and my expected graduation is May 2027. Please take
-              a look at my experience and the projects I have workd on.
+              I am passionate about software development and designing user-focused solutions 
+              that make technology more accessible and impactful. 
+              I also combine UX principles and marketing strategy to build and promote tools 
+              and programs that are intuitive, meaningful, and centered around real community needs.
             </h5>
             <br /><br />
 
             <!-- BUTTONS -->
             <div class="d-flex justify-content-center">
-              <a
+              <!-- <a
                 href="https://docs.google.com/document/d/1tm_555zAnMUj8czGzieTmydDOuqF5rUorGWD6t_P7UU/edit?usp=sharing"
                 target="_blank"
               >
@@ -123,7 +125,7 @@
                   </svg>
                   Download Resume
                 </button>
-              </a>
+              </a> -->
 
               <i class="bi bi-linkedin">
                 <a
@@ -132,13 +134,14 @@
                 >
                   <button
                     type="button"
-                    class="crete-round-regular linkedin-btn btn btn-light me-2 mt-2"
-                  >
+                    class="crete-round-regular linkedin-btn btn btn-light me-2 mt-2 gap-2 align-items-center"   
+                  > 
+                    
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
-                      fill="#E5DCCE"
+                      fill="#FAF9F6"
                       class="bi bi-linkedin"
                       viewBox="0 0 16 16"
                     >
@@ -146,6 +149,7 @@
                         d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
                       />
                     </svg>
+                    <span class="linked-btn-text">LinkedIn</span>
                   </button>
                 </a>
               </i>
@@ -160,7 +164,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
-                      fill="#E5DCCE"
+                       fill="#FAF9F6"
                       class="bi bi-github"
                       viewBox="0 0 16 16"
                     >
@@ -168,6 +172,7 @@
                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
                       />
                     </svg>
+                     <span class="linked-btn-text">GitHub</span>
                   </button>
                 </a>
               </i>
@@ -175,9 +180,10 @@
           </div>
         </div>
 
+
         <!-- EXPERIENCE BUTTON -->
         <div class="row">
-          <div class="container-fluid d-flex justify-content-center mb-3">
+          <div class="container-fluid d-flex justify-content-center mb-5">
             <a href="experience.html">
               <button
                 type="button"
@@ -189,14 +195,128 @@
             </a>
           </div>
         </div>
+
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <h3 class="carter-one-regular">
+              Education
+                </h3>
+              <h5>
+                High School
+              </h5>
+              <ul>
+                <li class="star-bullet">Lowell High School (2019 - 2023)</li>
+              </ul>
+
+          <h5>College</h5>
+<ul>
+                <li class="star-bullet">San Francisco State University: Bachelors of Science, Computer Science (2023 - 2027)</li>
+                <li class="star-bullet">
+  Relevant Coursework: Data Structures and Algorithms, Web Development, Software Development, Linear Algebra, Probability and Statistics (with Computing applications)
+</li>
+              </ul>
+          </div>
+
+
+
+          <div class="col-md-6">
+            <h3 class="carter-one-regular">
+              Skills
+            </h3>
+
+            <h5>Technical Skills</h5>
+<ul>
+  <li class="star-bullet"><strong>Languages:</strong> Java, Python, C++, C, JavaScript</li>
+  <li class="star-bullet"><strong>Frontend:</strong> HTML, CSS, Bootstrap, React</li>
+  <li class="star-bullet"><strong>Backend & Databases:</strong> PostgreSQL, MongoDB</li>
+  <li class="star-bullet"><strong>Tools & Platforms:</strong> Git, GitHub, Docker, Postman, Linux (Ubuntu)</li>
+</ul>
+
+          <h5>
+              Creative and Marketing
+            </h5>
+<ul>
+  <li class="star-bullet">SEO (keyword research, on-page optimization)</li>
+  <li class="star-bullet">Digital Marketing: Email campaigns (Mailchimp)</li>
+  <li class="star-bullet">Web & CMS: WordPress (site building and editing)</li>
+  <li class="star-bullet">Design Tools: Figma, Canva (flyers, UI mockups)</li>
+  <li class="star-bullet">Analytics: Google Analytics (traffic insights)</li>
+  <li class="star-bullet">Fundraising & Campaign Tools: Givebutter (donation pages, campaign setup)</li>
+</ul>
+            
+
+            <h5>
+              Other
+            </h5>
+               <ul>
+                <li class="star-bullet">Proficient in Spanish</li>
+                <li class="star-bullet">Google Workspace: Gmail, Sheets, Slides</li>
+                </ul>
+         
+
+          </div>
+        </div>
+
+        <hr>
+        <h3 class="carter-one-regular">
+              Professional Development
+            </h3>
+        
+        <div class="row mb-5">
+          <div class="col-md-3">
+<div class="card-box">
+            <h5>2023</h5>
+            <ul>
+                <li class="star-bullet">Accenture's Learning to Lead: Business Analyst</li>
+                <li class="star-bullet">AI-STAARS</li>     
+              </ul>
+              </div>
+            </div>
+          <div class="col-md-3">
+            <div class="card-box">
+          <h5>2024</h5>
+          <ul>
+          <li class="star-bullet">Dev/Mission: Pre-Apprentice</li>
+                <li class="star-bullet">SFSU's Gator Leadership Circle</li>
+              </ul>
+</div>
+</div>
+
+<div class="col-md-3">
+  <div class="card-box">
+           <h5>2025</h5>
+           <ul>
+            <li class="star-bullet">Code Path: Technical Interview Preperation</li>
+                <li class="star-bullet">SFSU's President's Leadership Fellowship Program</li>
+
+            </ul>
+          </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-box">
+            <h5>2026</h5>
+            <ul>
+             <li class="star-bullet">Google UX Design Certiicate</li>
+                <li class="star-bullet">Google AI Essentials Certificate</li>
+                </ul>
+          </div>
+          </div>
+          </div>
+
+        </div>
+
+        
       </div>
     </div>
 
+   
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+       <!-- <script src="https://cdn.jsdelivr.net/npm/typed-js@0.2.3/core/index.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
   </body>
 </html>
